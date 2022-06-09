@@ -16,6 +16,31 @@ async function getMultiple(page = 1) {
     meta,
   };
 }
+
+async function getBusqueda(word) {
+  const result = await db.query(
+    "SELECT id, quote, author FROM quote WHERE quote LIKE ?",
+    ["%" + word + "%"]
+  );
+  const data = helper.emptyOrRows(result);
+
+  return {
+    data,
+  };
+}
+
+async function getQuote(id = 1) {
+  const result = await db.query(
+    "SELECT id, quote, author FROM quote WHERE ID= ?",
+    [id]
+  );
+  const data = helper.emptyOrRows(result);
+
+  return {
+    data,
+  };
+}
+
 function validateCreate(quote) {
   let messages = [];
 
@@ -69,4 +94,6 @@ async function create(quote) {
 module.exports = {
   getMultiple,
   create,
+  getBusqueda,
+  getQuote,
 };
