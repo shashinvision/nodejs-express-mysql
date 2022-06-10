@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const rutasProtegidas = require("../middleware/rutasProtegidas")
 
 router.post("/", (req, res) => {
   console.log("body", req.body);
@@ -28,6 +29,18 @@ router.post("/", (req, res) => {
   } else {
     res.json({ mensaje: "Usuario o contraseña incorrectos" });
   }
+});
+
+
+// con el middleware
+router.get('/datos', rutasProtegidas, (req, res) => {
+ const datos = [
+  { id: 1, nombre: "Asfo" },
+  { id: 2, nombre: "Denisse" },
+  { id: 3, nombre: "Carlos" }
+ ];
+
+ res.json(datos);
 });
 
 module.exports = router;
