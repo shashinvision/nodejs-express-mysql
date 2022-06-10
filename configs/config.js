@@ -15,6 +15,7 @@ const config = {
     debug: env.DB_DEBUG || false,
   },
   listPerPage: env.LIST_PER_PAGE || 10,
+  llave: "miclaveultrasecreta123*",
 };
 
 module.exports = config;
