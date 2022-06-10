@@ -1,6 +1,6 @@
 const db = require("../services/db");
 const helper = require("../helper");
-const config = require("../config");
+const config = require("../configs/config");
 
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
