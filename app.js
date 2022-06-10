@@ -4,8 +4,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
-var quotesRouter = require("./routes/quotes");
-
+// const port = 3500
 var app = express();
 
 app.use(logger("dev"));
@@ -33,8 +32,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/", indexRouter);
-app.use("/quotes", quotesRouter);
 
+// app.listen(port, function () {console.log("Started application on port", port)})
 
 // validacion de errores va antes del export del modulo
 app.use((err, req, res, next) => {
