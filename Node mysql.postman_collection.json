@@ -1,0 +1,1073 @@
+{
+	"info": {
+		"_postman_id": "79b812a1-2858-4b17-a2dd-8a6080a27b16",
+		"name": "Node mysql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7896082"
+	},
+	"item": [
+		{
+			"name": "Inicio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Inicio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-AE2NbdD+vr2pKTyfAJX9C4to32g\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 19:39:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Estás conectado a nuestra API\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get paginate v1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quotes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request get list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": \"Lorem ipsum\",\n    \"author\": \"Felipe Mancilla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quotes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1028"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"404-oGNBUqhZHZRYjuJp3bMLdbAXZVc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 02:10:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 12,\n            \"quote\": \"Deleted code is debugged code.\",\n            \"author\": \"Jeff Sickel\"\n        },\n        {\n            \"id\": 13,\n            \"quote\": \"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies.\",\n            \"author\": \"C.A.R. Hoare\"\n        },\n        {\n            \"id\": 14,\n            \"quote\": \"Simplicity is prerequisite for reliability.\",\n            \"author\": \"Edsger W. Dijkstra\"\n        },\n        {\n            \"id\": 15,\n            \"quote\": \"There are only two hard things in Computer Science: cache invalidation and naming things.\",\n            \"author\": \"Phil Karlton\"\n        },\n        {\n            \"id\": 16,\n            \"quote\": \"Measuring programming progress by lines of code is like measuring aircraft building progress by weight.\",\n            \"author\": \"Bill Gates\"\n        },\n        {\n            \"id\": 17,\n            \"quote\": \"Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Brian Kernighan\"\n        },\n        {\n            \"id\": 19,\n            \"quote\": \"Lorem Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Felipe Brian Kernighan\"\n        },\n        {\n            \"id\": 20,\n            \"quote\": \"Lorem ipsum\",\n            \"author\": \"Felipe Mancilla\"\n        }\n    ],\n    \"meta\": {\n        \"page\": \"2\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get paginate v2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quotes?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request get params",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quotes?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1535"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5ff-h06jSryC7SADpXXoUd317TrNZwk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 02:11:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quote\": \"There are only two kinds of languages: the ones people complain about and the ones nobody uses.\",\n            \"author\": \"Bjarne Stroustrup\"\n        },\n        {\n            \"id\": 3,\n            \"quote\": \"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.\",\n            \"author\": \"Martin Fowler\"\n        },\n        {\n            \"id\": 4,\n            \"quote\": \"First, solve the problem. Then, write the code.\",\n            \"author\": \"John Johnson\"\n        },\n        {\n            \"id\": 5,\n            \"quote\": \"Java is to JavaScript what car is to Carpet.\",\n            \"author\": \"Chris Heilmann\"\n        },\n        {\n            \"id\": 6,\n            \"quote\": \"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.\",\n            \"author\": \"John Woods\"\n        },\n        {\n            \"id\": 7,\n            \"quote\": \"I'm not a great programmer; I'm just a good programmer with great habits.\",\n            \"author\": \"Kent Beck\"\n        },\n        {\n            \"id\": 8,\n            \"quote\": \"Truth can only be found in one place: the code.\",\n            \"author\": \"Robert C. Martin\"\n        },\n        {\n            \"id\": 9,\n            \"quote\": \"If you have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the 'what'.\",\n            \"author\": \"Martin Fowler\"\n        },\n        {\n            \"id\": 10,\n            \"quote\": \"The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; premature optimization is the root of all evil (or at least most of it) in programming.\",\n            \"author\": \"Donald Knuth\"\n        },\n        {\n            \"id\": 11,\n            \"quote\": \"SQL, Lisp, and Haskell are the only programming languages that I’ve seen where one spends more time thinking than typing.\",\n            \"author\": \"Philip Greenspun\"\n        }\n    ],\n    \"meta\": {\n        \"page\": \"1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get detalle quote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quotes/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get detalle quote",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quotes/id/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes",
+								"id",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9a-sQCGj3qlQA1j2SALBGEwlRgRrcc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:19:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quote\": \"There are only two kinds of languages: the ones people complain about and the ones nobody uses.\",\n            \"author\": \"Bjarne Stroustrup\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "get detalle con error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quotes/id/66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes",
+								"id",
+								"66"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "11"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b-EFAlOux7Kcr/ZEgGkn2r+oFAbu4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:20:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quotes/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quotes/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2646"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a56-vxpn8lFgoR7/EUA+wbCZ7XgZk9I\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:31:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quote\": \"There are only two kinds of languages: the ones people complain about and the ones nobody uses.\",\n            \"author\": \"Bjarne Stroustrup\"\n        },\n        {\n            \"id\": 3,\n            \"quote\": \"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.\",\n            \"author\": \"Martin Fowler\"\n        },\n        {\n            \"id\": 4,\n            \"quote\": \"First, solve the problem. Then, write the code.\",\n            \"author\": \"John Johnson\"\n        },\n        {\n            \"id\": 5,\n            \"quote\": \"Java is to JavaScript what car is to Carpet.\",\n            \"author\": \"Chris Heilmann\"\n        },\n        {\n            \"id\": 6,\n            \"quote\": \"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.\",\n            \"author\": \"John Woods\"\n        },\n        {\n            \"id\": 7,\n            \"quote\": \"I'm not a great programmer; I'm just a good programmer with great habits.\",\n            \"author\": \"Kent Beck\"\n        },\n        {\n            \"id\": 8,\n            \"quote\": \"Truth can only be found in one place: the code.\",\n            \"author\": \"Robert C. Martin\"\n        },\n        {\n            \"id\": 9,\n            \"quote\": \"If you have to spend effort looking at a fragment of code and figuring out what it's doing, then you should extract it into a function and name the function after the 'what'.\",\n            \"author\": \"Martin Fowler\"\n        },\n        {\n            \"id\": 10,\n            \"quote\": \"The real problem is that programmers have spent far too much time worrying about efficiency in the wrong places and at the wrong times; premature optimization is the root of all evil (or at least most of it) in programming.\",\n            \"author\": \"Donald Knuth\"\n        },\n        {\n            \"id\": 11,\n            \"quote\": \"SQL, Lisp, and Haskell are the only programming languages that I’ve seen where one spends more time thinking than typing.\",\n            \"author\": \"Philip Greenspun\"\n        },\n        {\n            \"id\": 12,\n            \"quote\": \"Deleted code is debugged code.\",\n            \"author\": \"Jeff Sickel\"\n        },\n        {\n            \"id\": 13,\n            \"quote\": \"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies.\",\n            \"author\": \"C.A.R. Hoare\"\n        },\n        {\n            \"id\": 14,\n            \"quote\": \"Simplicity is prerequisite for reliability.\",\n            \"author\": \"Edsger W. Dijkstra\"\n        },\n        {\n            \"id\": 15,\n            \"quote\": \"There are only two hard things in Computer Science: cache invalidation and naming things.\",\n            \"author\": \"Phil Karlton\"\n        },\n        {\n            \"id\": 16,\n            \"quote\": \"Measuring programming progress by lines of code is like measuring aircraft building progress by weight.\",\n            \"author\": \"Bill Gates\"\n        },\n        {\n            \"id\": 17,\n            \"quote\": \"Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Brian Kernighan\"\n        },\n        {\n            \"id\": 19,\n            \"quote\": \"Lorem Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Felipe Brian Kernighan\"\n        },\n        {\n            \"id\": 20,\n            \"quote\": \"Lorem ipsum\",\n            \"author\": \"Felipe Mancilla\"\n        },\n        {\n            \"id\": 22,\n            \"quote\": \"Lorem ipsum 2222\",\n            \"author\": \"Felipe Mancilla\"\n        },\n        {\n            \"id\": 24,\n            \"quote\": \"Lorem ipsum 222243535\",\n            \"author\": \"Felipe Mancilla\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Access with token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Inicio Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwidXN1YXJpbyI6ImZlbGlwZSIsImlhdCI6MTY1NDg5MDIwOSwiZXhwIjoxNjU0ODkxNjQ5fQ.CfXRurewHyaoymKwSPuXdNuU8fxqq0rUJ5yOXaY_YpM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/datos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"datos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-8O/CYo7QlQlEnRY/jv9JtpjVqmk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 19:46:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Asfo\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Denisse\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Carlos\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Insert quote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quote\": \"Lorem ipsum 222243535\",\n    \"author\": \"Felipe Mancilla\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "exito",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": \"Lorem ipsum\",\n    \"author\": \"Felipe Mancilla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-Gw37o554emBLJSQVDFBkjoN6exA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 02:08:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Quote created successfully\"\n}"
+				},
+				{
+					"name": "error entrada duplicada",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": \"Lorem ipsum 2222\",\n    \"author\": \"Felipe Mancilla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/quotes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-ggM7D57lUMIIgnLt+9ntWyn/Zw4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:26:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Duplicate entry 'Lorem ipsum 2222' for key 'idx_quote_uniqie'\"\n}"
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\": \"felipe\",\n    \"pass\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth correcto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuario\": \"felipe\",\n    \"pass\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "193"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c1-S/Xj3wpv0PCuc+oM2g1fHNqgrSI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 Jun 2022 17:37:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Autenticación correcta\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNjU0ODgyNjM5LCJleHAiOjE2NTQ4ODQwNzl9.kxi4NA5raTOZ7W5ib08l3rX4EL8jpg2_f-INRTszcjk\"\n}"
+				},
+				{
+					"name": "auth incorrecto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quote\": \"Lorem ipsum\",\n    \"author\": \"Felipe Mancilla\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-6dFwE7PBH1IvFTfhdTJn15VsbqA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 12:44:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Usuario o contraseña incorrectos\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ruta protegida con middleware",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwidXN1YXJpbyI6ImZlbGlwZSIsImlhdCI6MTY1NDk1MjE1OSwiZXhwIjoxNjU0OTUzNTk5fQ.ZfnFxuw5P5S1av8RffbXhFJrCs5MT67Mmog8TrTo81M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/auth/authData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"authData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error sin token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/authData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"authData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-SSXd4jG87KqPi06mcojgVYivO/E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 12:54:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Token no proveída.\"\n}"
+				},
+				{
+					"name": "exito con token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwidXN1YXJpbyI6ImZlbGlwZSIsImlhdCI6MTY1NDk1MjE1OSwiZXhwIjoxNjU0OTUzNTk5fQ.ZfnFxuw5P5S1av8RffbXhFJrCs5MT67Mmog8TrTo81M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/authData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"authData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-8O/CYo7QlQlEnRY/jv9JtpjVqmk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 12:56:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Asfo\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Denisse\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Carlos\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "busqueda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quotes/buscar?q=computer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotes",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "computer"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "busqueda",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/quotes/buscar?q=computer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"quotes",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "computer"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "533"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"215-n20MPzkqP+w05E46tuldYt6V8MY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:14:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"quote\": \"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.\",\n            \"author\": \"Martin Fowler\"\n        },\n        {\n            \"id\": 15,\n            \"quote\": \"There are only two hard things in Computer Science: cache invalidation and naming things.\",\n            \"author\": \"Phil Karlton\"\n        },\n        {\n            \"id\": 17,\n            \"quote\": \"Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Brian Kernighan\"\n        },\n        {\n            \"id\": 19,\n            \"quote\": \"Lorem Controlling complexity is the essence of computer programming.\",\n            \"author\": \"Felipe Brian Kernighan\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

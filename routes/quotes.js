@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var quotes = require("../controllers/quotes");
 
-// usage: http://localhost:3000/quotes?page=2
+// usage: http://localhost:3000/quotes?page=2,
 router.get("/", async function (req, res, next) {
   try {
     res.json(await quotes.getMultiple(req.query.page));
@@ -11,6 +11,15 @@ router.get("/", async function (req, res, next) {
     next(error);
   }
 });
+router.get("/all", async function (req, res, next) {
+  try {
+    res.json(await quotes.getAllQuotes());
+  } catch (error) {
+    console.log("Error mientras se realizaba la consulta", error.message);
+    next(error);
+  }
+});
+
 // usage: http://localhost:3000/quotes/buscar?q=computer
 router.get("/buscar", async function (req, res, next) {
   try {

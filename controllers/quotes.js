@@ -1,44 +1,19 @@
-const db = require("../services/db");
-const helper = require("../helper");
-const config = require("../configs/config");
+const model = require("../model/quotes");
 
-async function getMultiple(page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
-  const rows = await db.query("SELECT id, quote, author FROM quote LIMIT ?,?", [
-    offset,
-    config.listPerPage,
-  ]);
-  const data = helper.emptyOrRows(rows);
-  const meta = { page };
-
-  return {
-    data,
-    meta,
-  };
+function getMultiple(page = 1) {
+  return model.getQuotes(page);
 }
 
-async function getBusqueda(word) {
-  const result = await db.query(
-    "SELECT id, quote, author FROM quote WHERE quote LIKE ?",
-    ["%" + word + "%"]
-  );
-  const data = helper.emptyOrRows(result);
-
-  return {
-    data,
-  };
+function getBusqueda(word) {
+  return model.busqueda(word);
 }
 
-async function getQuote(id = 1) {
-  const result = await db.query(
-    "SELECT id, quote, author FROM quote WHERE ID= ?",
-    [id]
-  );
-  const data = helper.emptyOrRows(result);
+function getQuote(id = 1) {
+  return model.detalleQuote(id);
+}
 
-  return {
-    data,
-  };
+function getAllQuotes (){
+  return model.getAll()
 }
 
 function validateCreate(quote) {
@@ -74,21 +49,9 @@ function validateCreate(quote) {
   }
 }
 
-async function create(quote) {
+function create(quote) {
   validateCreate(quote);
-
-  const result = await db.query(
-    "INSERT INTO quote (quote, author) VALUES (?, ?)",
-    [quote.quote, quote.author]
-  );
-
-  let message = "Error in creating quote";
-
-  if (result.affectedRows) {
-    message = "Quote created successfully";
-  }
-
-  return { message };
+  return model.insertQuote(quote);
 }
 
 module.exports = {
@@ -96,4 +59,5 @@ module.exports = {
   create,
   getBusqueda,
   getQuote,
+  getAllQuotes
 };

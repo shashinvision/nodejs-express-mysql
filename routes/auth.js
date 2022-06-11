@@ -32,8 +32,8 @@ router.post("/", (req, res) => {
 });
 
 
-// con el middleware
-router.get('/datos', rutasProtegidas, (req, res) => {
+// ejemplo de proteccion de reuta con middleware usando jwt
+router.get('/authData', rutasProtegidas, (req, res) => {
  const datos = [
   { id: 1, nombre: "Asfo" },
   { id: 2, nombre: "Denisse" },
