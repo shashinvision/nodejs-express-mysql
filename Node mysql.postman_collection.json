@@ -867,60 +867,6 @@
 			},
 			"response": [
 				{
-					"name": "error sin token",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/auth/authData",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"auth",
-								"authData"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "33"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"21-SSXd4jG87KqPi06mcojgVYivO/E\""
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 11 Jun 2022 12:54:12 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"mensaje\": \"Token no proveída.\"\n}"
-				},
-				{
 					"name": "exito con token",
 					"originalRequest": {
 						"method": "GET",
@@ -979,6 +925,120 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Asfo\"\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Denisse\"\n    },\n    {\n        \"id\": 3,\n        \"nombre\": \"Carlos\"\n    }\n]"
+				},
+				{
+					"name": "error sin token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/authData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"authData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-SSXd4jG87KqPi06mcojgVYivO/E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 12:54:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Token no proveída.\"\n}"
+				},
+				{
+					"name": "error token invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJh345435345345bGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwidXN1YXJpbyI6ImZlbGlwZSIsImlhdCI6MTY1NDk1MjE1OSwiZXhwIjoxNjU0OTUzNTk5fQ.ZfnFxuw5P5S1av8RffbXhFJrCs5MT67Mmog8TrTo81M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/authData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"authData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-kPf8+bCJAvLROtHYp9tvZf/9Few\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 11 Jun 2022 13:37:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"Token inválida\"\n}"
 				}
 			]
 		},
