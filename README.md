@@ -4,6 +4,8 @@ Proyecto de backend con node y mysql
 
 npx express-generator --no-view --git nodejs-mysql
 
+cd nodejs-mysql && npm install && DEBUG=nodejs-mysql:* nodemon start
+
 cd nodejs-mysql && npm install && DEBUG=nodejs-mysql:* npm start
 
 rm -rf public
