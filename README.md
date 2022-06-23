@@ -8,15 +8,25 @@ cd nodejs-mysql && npm install && DEBUG=nodejs-mysql:* npm start
 
 rm -rf public
 
-DEBUG=nodejs-mysql:* npm start
+
+### producción
+```
+
+npm start
+```
 
 npm install --save mysql2
 
 #you might need sudo depending on your config
 
+```
 npm install -g nodemon
+```
 
-DEBUG=nodejs-mysql:* nodemon bin/www
+### Para Debug en dev con nodemon y DEBUG
+```
+npm dev
+```
 
 
 ### basado en
